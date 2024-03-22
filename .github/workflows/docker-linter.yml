@@ -9,3 +9,21 @@ jobs:
       - uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile
+inputs:
+  dockerfile:
+    required: false
+    description: 'The path to the Dockerfile to lint'
+    default: 'Dockerfile'
+  config:
+    required: false
+    description: 'Path to a config file'
+    default:
+  recursive:
+    required: false
+    description:
+      'Search for specified dockerfile recursively, from the project root'
+    default: 'false'
+  output-file:
+    required: false
+    description: 'The path where to save the linting results to'
+    default: "/dev/stdout"       
